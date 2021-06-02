@@ -26,7 +26,7 @@ const CACHED = MOI.Utilities.CachingOptimizer(
 )
 const BRIDGED = MOI.Bridges.full_bridge_optimizer(CACHED, Float64)
 
-const CONFIG = MOI.Test.TestConfig(duals = false, infeas_certificates = false)
+const CONFIG = MOI.Test.Config(duals = false, infeas_certificates = false)
 
 function test_basic_constraint_tests()
     return MOI.Test.basic_constraint_tests(CACHED, CONFIG)
